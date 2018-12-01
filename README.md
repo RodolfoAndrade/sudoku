@@ -10,7 +10,7 @@ pandas              0.23.4
 Keras               2.2.4
 matplotlib          3.0.1
 
-I have studied a little of machine learning and since i love sudoku i tried to used both of these knowledge in this project.
+I have studied a little of machine learning and since i love sudoku i tried to used both of these skills in this project.
 :D
 
 my first approach was to use a simple neural networking. in sudoku_nn i create just a simple fully connected layer in the same size of a sudoku game (9x9=81).
