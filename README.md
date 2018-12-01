@@ -1,28 +1,55 @@
 # Machine Learning Sudoku Solver
 
+
+
 This is my approach to solve sudoku games using machine learning.
+
+
 
 The dataset used: https://www.kaggle.com/bryanpark/sudoku
 
+
+
 ### Prerequisites
-numpy               1.15.4
-pandas              0.23.4
-Keras               2.2.4
-matplotlib          3.0.1
 
-I have studied a little bit of machine learning and since i love playing Sudoku I tried to used both of these skills in this project. :D
+numpy        1.15.4
 
-My first approach was to use a simple Neural Network. In sudoku_nn I create just a simple fully connected layer in the same size of a sudoku game (9x9=81).
-this only resulted in 80% accuracy. Which it is unforgiving, because sudoku is a simple game with some simple rules. It should be ease for a simple artificial intelligence learn the rules and solve it. The NN got wrong even the most obvious square. Which means it didn't learn the rules.
+pandas        0.23.4
 
-the dataset has one milions sudoku games. each one is a string of 81 char, for both of the quiz and the solution. the quiz has char 0 while the solution don't. 0 represent the empty cell. the cell which we mant to solve.
-some games has 40 to 50 empty spaces. there is no ranking of dificulty.
+Keras        2.2.4
 
-knowing the dataset and the neural networking, i believe it wasnt able to reach 100% accuracy because sudoku game require some steps.
-using elimination is possible to find the solution for some squares but for other it is required you to solve some other squares first.
-so the sudoku problem demand a step-by-step solution. with my nn solution that tries to solve it in one go that didnt work.
+matplotlib    3.0.1
 
-to overcome that problem i thought the best solution would be multilayer perceptron, but i was mistaken. the accuracy increased to 80%.
 
-finally the best solution was using lstm layer. it returned 99% accuracy.
 
+I have studied a little bit of machine learning, and since I like playing Sudoku, I tried to use both of these skills in this project. :D
+
+
+
+My first approach was to use a simple Neural Network (NN). In the sudoku_nn file, I create a simple fully connected layer in the same size as a sudoku game (9x9=81). 
+Which resulted in 80% accuracy. 
+Which it is unforgiving because sudoku is a simple game with some simple rules. It should be easy for a simple artificial intelligence learn the rules and solve it. 
+The NN got wrong even the most obvious square. Which means it didn't learn the rules.
+
+
+
+The dataset has one million sudoku games. Each one is a string of 81 char, for both the quiz and the solution. The quiz has char 0, while the solution doesn't. 0 represent the empty cell, the cell which we want to solve.
+
+Some games have 40 to 50 empty spaces. There is no difficulty ranking.
+
+
+
+Knowing the dataset and the neural network, I believe it wasn't able to reach 100% accuracy because sudoku game requires steps to find all the empty cells. 
+By seeing the line, column and square of an empty cell is possible to exclude some numbers from the possibilities. Using this elimination is possible to find only one possible number as the solution for some cells, but for others, it is required that you solve some other cells first.
+
+So the sudoku problem demands a step-by-step solution. So my NN solution that tries to solve it in one go didn't work.
+
+
+
+To overcome that problem I thought the best solution would be to use a multilayer perceptron (MLP), but I was mistaken. The accuracy didn't go further than 80%.
+
+
+
+Finally, the best solution was using LSTM. This algorithm uses a temporal, step-by-step solution. 
+For that, I had to create a new dataset from the old one. I programmed an algorithm that solves each sudoku game. This simple algorithm followed the rules to find the cell which got only one possible number and saves it in the game. Then, the algorithm is executed again until there are no empty cells. With this, I was capable of creating a dataset with the steps to solve each game. Some games were solved using 4-7 steps, so I round it up to 10 steps to create a homogeneous dataset. 
+Later I created a simple LSTM network that returned 99% accuracy. :D
