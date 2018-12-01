@@ -10,11 +10,10 @@ pandas              0.23.4
 Keras               2.2.4
 matplotlib          3.0.1
 
-I have studied a little of machine learning and since i love sudoku i tried to used both of these skills in this project.
-:D
+I have studied a little bit of machine learning and since i love playing Sudoku I tried to used both of these skills in this project. :D
 
-my first approach was to use a simple neural networking. in sudoku_nn i create just a simple fully connected layer in the same size of a sudoku game (9x9=81).
-this only resulted in 80% accuracy which is unforgiving. i got wrong even the most obvious square, which means i didn't learn the rules.
+My first approach was to use a simple Neural Network. In sudoku_nn I create just a simple fully connected layer in the same size of a sudoku game (9x9=81).
+this only resulted in 80% accuracy. Which it is unforgiving, because sudoku is a simple game with some simple rules. It should be ease for a simple artificial intelligence learn the rules and solve it. The NN got wrong even the most obvious square. Which means it didn't learn the rules.
 
 the dataset has one milions sudoku games. each one is a string of 81 char, for both of the quiz and the solution. the quiz has char 0 while the solution don't. 0 represent the empty cell. the cell which we mant to solve.
 some games has 40 to 50 empty spaces. there is no ranking of dificulty.
