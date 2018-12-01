@@ -1,8 +1,14 @@
 # Machine Learning Sudoku Solver
 
-This is my approach to solve a sudoku game using machine learning.
+This is my approach to solve sudoku games using machine learning.
 
 The dataset used: https://www.kaggle.com/bryanpark/sudoku
+
+### Prerequisites
+numpy               1.15.4
+pandas              0.23.4
+Keras               2.2.4
+matplotlib          3.0.1
 
 I have studied a little of machine learning and since i love sudoku i tried to used both of these knowledge in this project.
 :D
