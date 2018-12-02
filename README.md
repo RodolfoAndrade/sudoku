@@ -46,10 +46,10 @@ So the sudoku problem demands a step-by-step solution. So my NN solution that tr
 
 
 
-To overcome that problem I thought the best solution would be to use a multilayer perceptron (MLP), but I was mistaken. The accuracy didn't go further than 80%.
+To overcome that problem I thought the best solution would be to use a multilayer perceptron (MLP), but I was mistaken. The accuracy didn't go further than 77%.
 
 
 
 Finally, the best solution was using LSTM. This algorithm uses a temporal, step-by-step solution. 
-For that, I had to create a new dataset from the old one. I programmed an algorithm that solves each sudoku game. This simple algorithm followed the rules to find the cell which got only one possible number and saves it in the game. Then, the algorithm is executed again until there are no empty cells. With this, I was capable of creating a dataset with the steps to solve each game. Some games were solved using 4-7 steps, so I round it up to 10 steps to create a homogeneous dataset. 
+For that, I had to create a new dataset from the old one. I programmed an algorithm (located in the sudoku_algorithm file) that solves each sudoku game. This simple algorithm followed the rules to find the cell which got only one possible number and saves it in the game. Then, the algorithm is executed again until there are no empty cells. With this, I was capable of creating a dataset with the steps to solve each game. Some games were solved using 4-7 steps, so I round it up to 10 steps to create a homogeneous dataset. 
 Later I created a simple LSTM network that returned 99% accuracy. :D
