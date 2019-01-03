@@ -2,23 +2,40 @@
 
 
 
-This is my approach to solve sudoku games using machine learning.
+Sudoku is a game with 3x3 blocks of 9x9 numbers or empty space. The goal is to fill the empty space following the rules. Every number must be unique in the line, column and block it is located. The possible numbers is in the range of 1 to 9. 
+
+This is my approach to solve sudoku games using machine learning. First, I used a simple Neural network, then a Multilayer Neural network. But the solution was only found using a Long Short-Term Memory network.
 
 
 
-The dataset used: https://www.kaggle.com/bryanpark/sudoku
+The dataset used can be found in this link: https://www.kaggle.com/bryanpark/sudoku
 
 
 
-### Prerequisites
+## Getting Started
+
+
+
+to run these notebooks on your computer you have to install anaconda or miniconda with python 3.7. after installation please follow the tutorials to create an environment and install the prerequisites.
+
+
+
+## Prerequisites
 
 numpy        1.15.4
 
+
 pandas        0.23.4
+
 
 Keras        2.2.4
 
+
 matplotlib    3.0.1
+
+
+
+## more information
 
 
 
